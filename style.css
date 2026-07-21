@@ -72,11 +72,6 @@ body {
     background: #fbbf24;
     font-weight: bold;
     text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.button:hover {
-    transform: translateY(-2px);
 }
 
 .section {
@@ -110,18 +105,6 @@ body {
     margin-bottom: 12px;
 }
 
-.contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 24px;
-}
-
-.secondary-button {
-    color: #ffffff;
-    background: #1e3a5f;
-}
-
 footer {
     padding: 24px;
     text-align: center;
@@ -142,4 +125,15 @@ footer {
     .hero-content {
         padding-top: 70px;
     }
+}
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.secondary-button {
+    color: #ffffff;
+    background: #1e3a5f;
 }
