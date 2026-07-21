@@ -15,24 +15,26 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: eu-west-2
 
-      - name: Deploy website to S3
+      - name: Deploy website to Amazon S3
         run: |
           aws s3 sync . s3://kelvin-aws-portfolio-2026 \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".gitignore" \
-            --exclude "README.md"
+            --exclude "README.md" \
+            --exclude "architecture/*" \
+            --exclude "screenshots/*"
 
-      - name: Invalidate CloudFront Cache
+      - name: Create CloudFront Invalidation
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E3NS0RUOIN5WYL \
