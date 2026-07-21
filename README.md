@@ -33,7 +33,7 @@ The website includes:
 - HTTPS
 
 ---
-
+![aws-portfolio-architecture](architecture/aws-portfolio-architecture.png)
 ## Architecture
 
 ```
